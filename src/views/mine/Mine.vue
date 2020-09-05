@@ -1,5 +1,5 @@
 <template>
-  <div>你好世界</div>
+  <div class="font-color">你好世界</div>
 </template>
 
 <script>

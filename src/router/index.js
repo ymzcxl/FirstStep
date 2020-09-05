@@ -12,6 +12,7 @@ const routes = [
     path: '/mine',
     component: Mine
   }
+
 ]
 export default new Router({
   routes,
