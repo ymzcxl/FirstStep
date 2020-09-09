@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 const Mine = () => import('@/views/mine/Mine')
+const Login = () => import('@/views/login/Login')
 const routes = [
   {
     path: '',
@@ -11,6 +12,10 @@ const routes = [
   {
     path: '/mine',
     component: Mine
+  },
+  {
+    path: '/login',
+    component: Login
   }
 
 ]

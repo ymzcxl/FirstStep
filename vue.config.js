@@ -31,17 +31,4 @@ module.exports = {
       }
     }
   },
-  // devServer: {
-  //   disableHostCheck: true, // 花生壳显示Invalid Host header让其不检查hostname。
-  //   https: true, // https:{type:Boolean}
-  //   open: false, // 配置自动启动浏览器
-  //   proxy: {
-  //     "/api": {
-  //       target: "https://", 
-  //       ws: false,
-  //       changeOrigin: true
-  //     }
-  //   },
-  //   before: require("./mock")
-  // }
 }
