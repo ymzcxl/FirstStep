@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped >
+<style scoped lang="scss">
 .top-module{
   display: flex;
   justify-content: space-between;
@@ -108,11 +108,11 @@ export default {
   color: #2915f7;
   text-shadow: 0px 3px 6px 0px #ffffff;
 }
-::v-deep .van-cell{
-  color: black;
-  padding: 50px;
+.van-cell::after{
+  border-bottom: 1px solid #777;
 }
-/* ::v-deep #tab-bar{
-  display: none !important;
-} */
+.van-hairline--top-bottom::after{
+  margin: 0 30px;
+  border-bottom: 1px solid #777;
+}
 </style>
