@@ -31,4 +31,15 @@ module.exports = {
       }
     }
   },
+  devServer: {
+    https: true, 
+    open: false, 
+    proxy: {
+      "/api": {
+        target: "",
+        ws: false,
+        changeOrigin: true
+      }
+    }
+  }
 }
