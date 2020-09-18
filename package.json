@@ -5,13 +5,13 @@
   "author": "杨明照 <yangmingzhao@interlib.top>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "lint": "eslint --ext .js,.vue src",
     "serve": "vue-cli-service serve --open --mode dev",
     "build": "vue-cli-service build",
     "build:dev": "vue-cli-service build --mode dev",
-    "build:test": "vue-cli-service build --mode test"
+    "build:test": "vue-cli-service build --mode test",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "precommit": "pretty-quick --staged"
   },
   "dependencies": {
     "less": "^3.12.2",
