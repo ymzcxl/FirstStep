@@ -7,11 +7,14 @@
 </template>
 
 <script>
+import { axiosDatas } from '@/mixins/axios'
 export default {
+  mixins: [axiosDatas],
   created () {
-    console.log(
-      process.env.VUE_APP_BASE_URL
-    )
+    let data = this.getData('/users/list/', {
+      pageSize: 3
+    })
+    console.log(data)
   }
 }
 </script>

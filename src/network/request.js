@@ -32,4 +32,4 @@ instant.interceptors.response.use(res => { // 拿到的参数是结果
   console.log(err)
 })
 // 3.真正的网络请求
-return instant
+export default instant

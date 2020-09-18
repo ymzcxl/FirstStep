@@ -1,5 +1,4 @@
 const autoprefixer = require("autoprefixer");
-console.log( process.env.VUE_APP_BASE_URL);
 module.exports = {
   configureWebpack:{
     resolve:{
@@ -35,13 +34,17 @@ module.exports = {
     }
   },
   devServer: {
-    https: true, 
-    open: false, 
+    disableHostCheck: true,
+    https: true,
+    open: true,
     proxy: {
       "/api": {
-        target: "",
+        target: process.env.VUE_APP_URL,// 重环境变量中拿代理的路径
         ws: false,
-        changeOrigin: true
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     }
   }

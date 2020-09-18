@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import '@/assets/scss/main.scss'
+import axios from '@/network/request'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 Vue.use(Vant)
-Vue.config.productionTip = false
+Vue.prototype.$axios = axios
+// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
