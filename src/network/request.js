@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // 1.配置这个模块特有的基础配置
 const instant = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.VUE_APP_BASE_URL,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'
   },
