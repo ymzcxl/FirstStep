@@ -1,5 +1,5 @@
 const autoprefixer = require("autoprefixer");
-
+console.log( process.env.VUE_APP_BASE_URL);
 module.exports = {
   configureWebpack:{
     resolve:{

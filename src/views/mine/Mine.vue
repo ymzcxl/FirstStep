@@ -8,7 +8,11 @@
 
 <script>
 export default {
-
+  created () {
+    console.log(
+      process.env.VUE_APP_BASE_URL
+    )
+  }
 }
 </script>
 
