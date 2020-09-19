@@ -13,11 +13,13 @@ const routes = [
   },
   {
     path: '/mine',
-    component: Mine
+    component: Mine,
+    meta: { title: '我的页面咯' }
   },
   {
     path: '/login',
-    component: Login
+    component: Login,
+    meta: { title: '登录页面咯' }
   }
 ]
 
