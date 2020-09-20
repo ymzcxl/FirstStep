@@ -15,15 +15,17 @@
     <div class="couter-tips">登录鸽子账号以使用云空间、鸽子应有市场及跟多服务</div>
     <div class="account-module">
       <van-cell-group>
-         <van-field v-model="value2" placeholder="手机号/邮箱地址/鸽子号" />
-         <van-field v-model="value1" placeholder="密码" />
+         <van-field v-model="couter" placeholder="手机号/邮箱地址/鸽子号" />
+         <van-field v-model="password" placeholder="密码" />
+         <van-field v-model="phone" placeholder="电话" />
+         <van-field v-model="remark" placeholder="备注" />
       </van-cell-group>
     </div>
     <div class="tip-test">
       <span>短信验证码登陆</span>
       <span>忘记密码</span>
     </div>
-    <div class="btn-primer">登录</div>
+    <div class="btn-primer" @click="login">登录</div>
     <div class="btn-cancel">注册账号</div>
   </div>
 
@@ -33,12 +35,34 @@
 export default {
   data () {
     return {
-      value1: '',
-      value2: ''
+      couter: '',
+      password: '',
+      phone: '',
+      remark: ''
     }
   },
   methods: {
-
+    login () {
+      let obj = {
+        password: this.password,
+        username: this.couter,
+        tel: this.phone,
+        remark: this.remark
+      }
+      this.$axios({
+        method: 'post',
+        url: 'users/',
+        data: {
+          ...obj
+        }
+      }).then(res => {
+        if (res.code === 10000) {
+          alert('注册成功')
+        } else {
+          alert('注册失败')
+        }
+      })
+    }
   }
 }
 </script>
