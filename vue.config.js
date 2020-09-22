@@ -50,7 +50,7 @@ module.exports = {
 
   devServer: {
     disableHostCheck: true,
-    https: true,
+    https: false,
     // host:'192.168.0.101',
     open: true,
     proxy: {
