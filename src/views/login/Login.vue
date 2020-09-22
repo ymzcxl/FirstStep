@@ -16,7 +16,7 @@
     <div class="account-module">
       <van-cell-group>
          <van-field v-model="couter" placeholder="手机号/邮箱地址/鸽子号" />
-         <van-field v-model="password" placeholder="密码" />
+         <van-field v-model="password" type="password" placeholder="密码" />
          <van-field v-model="phone" placeholder="电话" />
          <van-field v-model="remark" placeholder="备注" />
       </van-cell-group>
@@ -26,7 +26,7 @@
       <span>忘记密码</span>
     </div>
     <div class="btn-primer" @click="login">登录</div>
-    <div class="btn-cancel">注册账号</div>
+    <div class="btn-cancel" @click="handleJump">注册账号</div>
   </div>
 
 </template>
@@ -42,6 +42,9 @@ export default {
     }
   },
   methods: {
+    handleJump () {
+      this.$router.push('/home')
+    },
     login () {
       let obj = {
         password: this.password,
@@ -49,13 +52,15 @@ export default {
         tel: this.phone,
         remark: this.remark
       }
+      // vue 的网络请求是axios
       this.$axios({
-        method: 'post',
-        url: 'users/',
+        method: 'post', // 请求的方法，get.post，put,delect
+        url: 'users/', // 请求的路径名
+        // 请求的数据
         data: {
           ...obj
         }
-      }).then(res => {
+      }).then(res => { // then 之后 respond
         if (res.code === 10000) {
           alert('注册成功')
         } else {

@@ -6,6 +6,7 @@ Vue.use(Router)
 
 const Mine = () => import('@/views/mine/Mine')
 const Login = () => import('@/views/login/Login')
+let Home = () => import('@/views/home/Home')
 const routes = [
   {
     path: '',
@@ -20,6 +21,11 @@ const routes = [
     path: '/login',
     component: Login,
     meta: { title: '登录页面咯' }
+  },
+  {
+    path: '/home',
+    component: Home, // 引入上面Home
+    meta: { title: '首页' }
   }
 ]
 
@@ -30,15 +36,20 @@ const router = new Router({
 })
 
 router.beforeEach(async (to, from, next) => {
+  // 定义一个数组
   let arr = [
     {
       path: '/mine'
+    },
+    {
+      path: '/home'
     }
   ]
   let isFlag = arr.find(item => {
     return to.path === item.path
   })
   // 判断是否在一级页面
+  // 如果是真store.dispatch('allowTabShow', true) 否则store.dispatch('allowTabShow', false)
   isFlag
     ? store.dispatch('allowTabShow', true)
     : store.dispatch('allowTabShow', false)
