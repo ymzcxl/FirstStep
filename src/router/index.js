@@ -5,6 +5,7 @@ import store from '@/store'
 Vue.use(Router)
 
 const Mine = () => import('@/views/mine/Mine')
+const Classify = () => import('@/views/classify/Classify')
 const Login = () => import('@/views/login/Login')
 let Home = () => import('@/views/home/Home')
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
     path: '/home',
     component: Home, // 引入上面Home
     meta: { title: '首页' }
+  },
+  {
+    path: '/classify',
+    component: Classify, // 引入上面Home
+    meta: { title: '分类' }
   }
 ]
 
