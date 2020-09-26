@@ -6,12 +6,13 @@ import router from './router'
 import store from './store'
 import '@/assets/scss/main.scss'
 import axios from '@/network/request'
-import Vant from 'vant'
+import Vant, { Toast } from 'vant'
 import 'vant/lib/index.css'
 import 'lib-flexible/flexible.js'
+Vue.use(Toast)
 Vue.use(Vant)
 Vue.prototype.$axios = axios
-// Vue.config.productionTip = false
+Vue.prototype.$toast = Toast
 
 /* eslint-disable no-new */
 new Vue({

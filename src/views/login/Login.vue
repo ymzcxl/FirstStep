@@ -32,7 +32,9 @@
 </template>
 
 <script>
+import { axiosDatas } from '@/mixins/axios'
 export default {
+  mixins: [axiosDatas],
   data () {
     return {
       couter: '',
@@ -45,28 +47,20 @@ export default {
     handleJump () {
       this.$router.push('/home')
     },
-    login () {
+    async login () {
       let obj = {
         password: this.password,
         username: this.couter,
         tel: this.phone,
         remark: this.remark
       }
-      // vue 的网络请求是axios
-      this.$axios({
-        method: 'post', // 请求的方法，get.post，put,delect
-        url: 'users/', // 请求的路径名
-        // 请求的数据
-        data: {
-          ...obj
-        }
-      }).then(res => { // then 之后 respond
-        if (res.code === 10000) {
-          alert('注册成功')
-        } else {
-          alert('注册失败')
-        }
-      })
+      let res = await this.postData('users/', obj)
+      if (res.code === 10000) {
+        // alert('注册成功')
+        this.$toast('注册成功')
+      } else {
+        this.$toast('注册失败')
+      }
     }
   }
 }
