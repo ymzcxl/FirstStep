@@ -1,21 +1,13 @@
 <template>
   <div class="home-container">
-    <!-- <van-swipe :autoplay="3000">
+    <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in images" :key="index">
         <img :src="image" alt="">
       </van-swipe-item>
-    </van-swipe> -->
-    <van-address-list
-      v-model="chosenAddressId"
-      :list="list"
-      :disabled-list="disabledList"
-      disabled-text="以下地址超出配送范围"
-      default-tag-text="默认"
-      @add="onAdd"
-      @edit="onEdit"
-    />
-    <van-cell title="选择单个日期" :value="date" @click="show = true" />
-    <van-calendar v-model="show" :title="titles" :color="color" @confirm="onConfirm" />
+    </van-swipe>
+    <van-grid :column-num="4">
+      <van-grid-item v-for="value in 8" :key="value" icon="fire" :text="'高级货'+ value" />
+    </van-grid>
   </div>
 </template>
 
@@ -28,8 +20,9 @@ export default {
       color: '#008c8c',
       titles: '我是莫老板',
       images: [
-        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3540197368,1248056734&fm=26&gp=0.jpg',
-        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3540197368,1248056734&fm=26&gp=0.jpg'
+        'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1894245189,624137215&fm=26&gp=0.jpg',
+        'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3956679320,2050443053&fm=26&gp=0.jpg',
+        'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2650529120,1058972923&fm=26&gp=0.jpg'
       ],
       date: '',
       show: false,
@@ -87,8 +80,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep .van-calendar__selected-day{
-  color: red;
-  background: yellow!important;
+.van-swipe{
+  height: 175px;
+}
+::v-deep .van-swipe-item{
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+::v-deep .van-grid {
+  margin-top: 10px;
+  border-bottom: 1px solid #f7f7f7;
 }
 </style>

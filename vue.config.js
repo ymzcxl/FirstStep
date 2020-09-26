@@ -1,4 +1,5 @@
 const autoprefixer = require("autoprefixer");
+const pxtorem = require("postcss-pxtorem");
 module.exports = {
   configureWebpack:{
     resolve:{
@@ -31,17 +32,17 @@ module.exports = {
       sass: {
         prependData: '@import "~@/assets/common.scss";'
       },
-      // postcss: {
-      //   plugins: [
-      //     autoprefixer(),
-      //     pxtorem({
-      //       rootValue: 75, // 换算的基数(设计图750的根字体为32)
-      //       selectorBlackList: [".van", ".not-rem"], // 要忽略的选择器并保留为px。
-      //       propList: ["*"],
-      //       minPixelValue: 2 // 设置要替换的最小像素值。
-      //     })
-      //   ]
-      // }
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtorem({
+            rootValue: 40, // 换算的基数(设计图750的根字体为32)
+            selectorBlackList: [".van", ".not-rem"], // 要忽略的选择器并保留为px。
+            propList: ["*"],
+            minPixelValue: 2 // 设置要替换的最小像素值。
+          })
+        ]
+      }
     }
   },
    //警告 webpack 的性能提示

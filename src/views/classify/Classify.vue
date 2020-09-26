@@ -2,25 +2,29 @@
   <div class="classify-module">
     <van-tree-select height="55vw" :items="items" :main-active-index.sync="active">
       <template #content>
-        <van-image
-          v-if="active === 0"
-          src="https://img.yzcdn.cn/vant/apple-1.jpg"
-        />
-        <van-image
-          v-if="active === 1"
-          src="https://img.yzcdn.cn/vant/apple-2.jpg"
-        />
+        <fs-content v-if="active==0"></fs-content>
       </template>
     </van-tree-select>
   </div>
 </template>
 
 <script>
+import showModule from '@/components/busniss/ShowModule'
 export default {
+  components: {
+    'fs-content': showModule
+  },
   data () {
     return {
       active: 0,
-      items: [{ text: '分组 1' }, { text: '分组 2' }]
+      items: [
+        { text: '数码' },
+        { text: '手机' },
+        { text: '家电' },
+        { text: '家具' },
+        { text: '服装' },
+        { text: '鞋子' }
+      ]
     }
   }
 }
@@ -28,9 +32,13 @@ export default {
 
 <style scoped lang="scss">
 .classify-module{
-  height: 100vh;
+  height: 90vh;
 }
 ::v-deep .van-tree-select{
   height: 100%!important;
+  .van-tree-select__nav{
+    flex-grow: 0.7;
+    width: 150px;
+  }
 }
 </style>

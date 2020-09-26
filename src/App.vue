@@ -30,5 +30,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0;
+  height: 90vh;
+  padding-bottom: 65px;
 }
 </style>

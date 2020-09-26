@@ -4,11 +4,17 @@ import store from '@/store'
 
 Vue.use(Router)
 
-const Mine = () => import('@/views/mine/Mine')
+// 一级菜单
+const Home = () => import('@/views/home/Home')
 const Classify = () => import('@/views/classify/Classify')
+const Cart = () => import('@/views/cart/Cart')
+const Mine = () => import('@/views/mine/Mine')
+
+// 二级页面
 const Login = () => import('@/views/login/Login')
-let Home = () => import('@/views/home/Home')
+
 const routes = [
+  // 一级菜单
   {
     path: '',
     redirect: '/mine'
@@ -16,22 +22,28 @@ const routes = [
   {
     path: '/mine',
     component: Mine,
-    meta: { title: '我的页面咯' }
+    meta: { title: '个人中心' }
   },
   {
-    path: '/login',
-    component: Login,
-    meta: { title: '登录页面咯' }
-  },
-  {
-    path: '/home',
-    component: Home, // 引入上面Home
-    meta: { title: '首页' }
+    path: '/cart',
+    component: Cart,
+    meta: { title: '购物车' }
   },
   {
     path: '/classify',
-    component: Classify, // 引入上面Home
+    component: Classify,
     meta: { title: '分类' }
+  },
+  {
+    path: '/home',
+    component: Home,
+    meta: { title: '首页' }
+  },
+  // 二级菜单
+  {
+    path: '/login',
+    component: Login,
+    meta: { title: '登录/注册' }
   }
 ]
 
@@ -42,13 +54,19 @@ const router = new Router({
 })
 
 router.beforeEach(async (to, from, next) => {
-  // 定义一个数组
+  // 定义一个数组：包含下面路径的就去掉底部菜单栏
   let arr = [
     {
-      path: '/mine'
+      path: '/home'
     },
     {
-      path: '/home'
+      path: '/classify'
+    },
+    {
+      path: '/cart'
+    },
+    {
+      path: '/mine'
     }
   ]
   let isFlag = arr.find(item => {

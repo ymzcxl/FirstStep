@@ -23,7 +23,7 @@
             购物车
         </div>
       </tab-bar-item>
-      <tab-bar-item path="/me" activeColor='#008c8c'>
+      <tab-bar-item path="/mine" activeColor='#008c8c'>
         <img slot="item-icon" src="@/assets/img/tabbar/me.svg" alt="">
         <img slot="item-icon-select" src="@/assets/img/tabbar/me-select.svg" alt="">
         <div slot="item-text">

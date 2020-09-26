@@ -8,6 +8,7 @@ import '@/assets/scss/main.scss'
 import axios from '@/network/request'
 import Vant from 'vant'
 import 'vant/lib/index.css'
+import 'lib-flexible/flexible.js'
 Vue.use(Vant)
 Vue.prototype.$axios = axios
 // Vue.config.productionTip = false
