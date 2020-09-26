@@ -15,10 +15,10 @@
     <div class="couter-tips">登录鸽子账号以使用云空间、鸽子应有市场及跟多服务</div>
     <div class="account-module">
       <van-cell-group>
-         <van-field v-model="couter" placeholder="手机号/邮箱地址/鸽子号" />
-         <van-field v-model="password" type="password" placeholder="密码" />
-         <van-field v-model="phone" placeholder="电话" />
-         <van-field v-model="remark" placeholder="备注" />
+        <van-field v-model="couter" placeholder="手机号/邮箱地址/鸽子号" />
+        <van-field v-model="password" type="password" placeholder="密码" />
+        <van-field v-model="phone" placeholder="电话" />
+        <van-field v-model="remark" placeholder="备注" />
       </van-cell-group>
     </div>
     <div class="tip-test">
@@ -32,38 +32,38 @@
 </template>
 
 <script>
-import { axiosDatas } from '@/mixins/axios'
+import { axiosDatas } from '@/mixins/axios';
 export default {
   mixins: [axiosDatas],
-  data () {
+  data() {
     return {
       couter: '',
       password: '',
       phone: '',
       remark: ''
-    }
+    };
   },
   methods: {
-    handleJump () {
-      this.$router.push('/home')
+    handleJump() {
+      this.$router.push('/home');
     },
-    async login () {
-      let obj = {
+    async login() {
+      const obj = {
         password: this.password,
         username: this.couter,
         tel: this.phone,
         remark: this.remark
-      }
-      let res = await this.postData('users/', obj)
+      };
+      const res = await this.postData('users/', obj);
       if (res.code === 10000) {
         // alert('注册成功')
-        this.$toast('注册成功')
+        this.$toast('注册成功');
       } else {
-        this.$toast('注册失败')
+        this.$toast('注册失败');
       }
     }
   }
-}
+};
 </script>
 
 <style scoped lang="scss">

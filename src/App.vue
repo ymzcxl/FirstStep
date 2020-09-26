@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <main-tab-bar v-if="allowTabShow"></main-tab-bar>
+    <router-view/>
+    <main-tab-bar v-if="allowTabShow"/>
   </div>
 </template>
 
 <script>
-import MainTabBar from '@/components/base/mainTabbar/MainTabBar'
-import { mapState } from 'vuex'
+import MainTabBar from '@/components/base/mainTabbar/MainTabBar';
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
@@ -19,7 +19,7 @@ export default {
       allowTabShow: state => state.allowTabShow
     })
   }
-}
+};
 </script>
 
 <style>

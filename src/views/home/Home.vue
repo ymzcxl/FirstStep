@@ -6,16 +6,16 @@
       </van-swipe-item>
     </van-swipe>
     <van-grid :column-num="4">
-      <van-grid-item v-for="value in 8" :key="value" icon="fire" :text="'高级货'+ value" />
+      <van-grid-item v-for="value in 8" :key="value" :text="'高级货'+ value" icon="fire" />
     </van-grid>
   </div>
 </template>
 
 <script>
-import { Toast } from 'vant'
+import { Toast } from 'vant';
 export default {
   // 第一步：新建文件。第二步：配路由。第三步：写样式
-  data () {
+  data() {
     return {
       color: '#008c8c',
       titles: '我是莫老板',
@@ -50,33 +50,33 @@ export default {
           address: '浙江省杭州市滨江区江南大道 15 号'
         }
       ]
-    }
+    };
   },
-  created () {
-    this.color = 'green'
+  created() {
+    this.color = 'green';
     // this
   },
   methods: {
-    getData () {
+    getData() {
     },
-    onAdd () {
-      Toast('新增地址')
+    onAdd() {
+      Toast('新增地址');
     },
-    onEdit (item, index) {
-      Toast('编辑地址:' + index)
+    onEdit(item, index) {
+      Toast('编辑地址:' + index);
     },
-    formatDate (date) {
-      return `${date.getMonth() + 1}/${date.getDate()}`
+    formatDate(date) {
+      return `${date.getMonth() + 1}/${date.getDate()}`;
     },
-    onConfirm (date) {
-      this.show = false
-      this.date = this.formatDate(date)
+    onConfirm(date) {
+      this.show = false;
+      this.date = this.formatDate(date);
     }
   }
   // created () {
   //   this.getData()
   // }
-}
+};
 </script>
 
 <style scoped lang="scss">

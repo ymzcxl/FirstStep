@@ -1,13 +1,13 @@
 <template>
-    <div id="tab-bar">
-      <slot></slot>
-    </div>
+  <div id="tab-bar">
+    <slot/>
+  </div>
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style>

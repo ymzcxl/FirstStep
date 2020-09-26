@@ -1,20 +1,20 @@
 <template>
   <div class="classify-module">
-    <van-tree-select height="55vw" :items="items" :main-active-index.sync="active">
+    <van-tree-select :items="items" :main-active-index.sync="active" height="55vw">
       <template #content>
-        <fs-content v-if="active==0"></fs-content>
+        <fs-content v-if="active==0"/>
       </template>
     </van-tree-select>
   </div>
 </template>
 
 <script>
-import showModule from '@/components/busniss/ShowModule'
+import showModule from '@/components/busniss/ShowModule';
 export default {
   components: {
     'fs-content': showModule
   },
-  data () {
+  data() {
     return {
       active: 0,
       items: [
@@ -25,9 +25,9 @@ export default {
         { text: '服装' },
         { text: '鞋子' }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
