@@ -1,4 +1,4 @@
-import * as types from './mutation-types'
+import * as types from "./mutation-types";
 
 export default {
   // addCart (context, payLoad) {
@@ -18,7 +18,7 @@ export default {
   //     }
   //   })
   // },
-  allowTabShow ({ commit }, params) {
-    commit(types.ARROWTABSHOW, params)
+  allowTabShow({ commit }, params) {
+    commit(types.ARROWTABSHOW, params);
   }
-}
+};

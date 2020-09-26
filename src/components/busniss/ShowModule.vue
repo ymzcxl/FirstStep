@@ -4,8 +4,7 @@
       <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1738657804,3125367699&fm=26&gp=0.jpg" alt="">
     </div>
     <div class="item-module">
-      <div class="items" v-for="item in 20" :key="item">
-      </div>
+      <div v-for="item in 20" :key="item" class="items"/>
     </div>
   </div>
 </template>
@@ -13,7 +12,7 @@
 <script>
 export default {
 
-}
+};
 </script>
 
 <style scoped lang="scss">
