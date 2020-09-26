@@ -9,7 +9,7 @@
             首页
         </div>
       </tab-bar-item>
-      <tab-bar-item path="/kind" activeColor='#008c8c' >
+      <tab-bar-item path="/classify" activeColor='#008c8c' >
         <img slot="item-icon" src="@/assets/img/tabbar/kind.svg" alt="">
         <img slot="item-icon-select" src="@/assets/img/tabbar/kind-select.svg" alt="">
         <div slot="item-text">

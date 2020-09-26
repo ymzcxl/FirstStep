@@ -146,11 +146,11 @@ export default {
   position: absolute;
   display: flex;
   top: 133px;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   margin: auto;
   box-shadow: 1px 1px 3px #ccc;
-  width: 381px;
+  // width: 381px;
   height: 88px;
   background: #ffffff;
   border-radius: 20px;
@@ -166,7 +166,7 @@ export default {
   }
 }
 .order-module {
-  width: 379px;
+  // width: 379px;
   margin: 60px 20px 20px 20px;
   height: 260px;
   border-radius: 20px;
@@ -211,7 +211,8 @@ export default {
   height: 37px;
 }
 .img-module {
-  width: 356px;
+  // width: 356px;
+  padding: 0 20px;
   height: 113px;
   border-radius: 8px;
   overflow: hidden;
