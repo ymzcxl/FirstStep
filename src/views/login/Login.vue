@@ -32,20 +32,20 @@
 </template>
 
 <script>
-import { axiosDatas } from '@/mixins/axios';
+import { axiosDatas } from "@/mixins/axios";
 export default {
   mixins: [axiosDatas],
   data() {
     return {
-      couter: '',
-      password: '',
-      phone: '',
-      remark: ''
+      couter: "",
+      password: "",
+      phone: "",
+      remark: ""
     };
   },
   methods: {
     handleJump() {
-      this.$router.push('/home');
+      this.$router.push("/home");
     },
     async login() {
       const obj = {
@@ -54,12 +54,12 @@ export default {
         tel: this.phone,
         remark: this.remark
       };
-      const res = await this.postData('users/', obj);
+      const res = await this.postData("users/", obj);
       if (res.code === 10000) {
         // alert('注册成功')
-        this.$toast('注册成功');
+        this.$toast("注册成功");
       } else {
-        this.$toast('注册失败');
+        this.$toast("注册失败");
       }
     }
   }

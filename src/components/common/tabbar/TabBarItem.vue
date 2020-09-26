@@ -17,11 +17,11 @@ export default {
   props: {
     path: {
       type: String,
-      default: ''
+      default: ""
     },
     activeColor: {
       type: String,
-      default: 'red'
+      default: "red"
     }
   },
   data() {
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     itemClick() {
-      console.log('itemClick');
+      console.log("itemClick");
       console.log(this.path);
       this.$router.push(this.path);
     }

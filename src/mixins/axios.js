@@ -2,11 +2,11 @@
 export const axiosDatas = {
   methods: {
     // get请求获取数据
-    async getData(url = '', params = {}) {
+    async getData(url = "", params = {}) {
       return new Promise((resolve, reject) => {
         try {
           this.$axios({
-            method: 'get',
+            method: "get",
             url,
             params
           }).then(res => {
@@ -18,11 +18,11 @@ export const axiosDatas = {
       });
     },
     // post请求获取数据
-    async postData(url = '', params = {}) {
+    async postData(url = "", params = {}) {
       return new Promise((resolve, reject) => {
         try {
           this.$axios({
-            method: 'post',
+            method: "post",
             url,
             data: {
               ...params
@@ -36,7 +36,7 @@ export const axiosDatas = {
       });
     },
     // put请求获取数据
-    async putData(url = '', params = {}) {
+    async putData(url = "", params = {}) {
       return new Promise((resolve, reject) => {
         try {
           this.$axios.put(url, {
@@ -49,7 +49,7 @@ export const axiosDatas = {
         }
       });
     },
-    async delData(url = '', params = {}) {
+    async delData(url = "", params = {}) {
       return new Promise((resolve, reject) => {
         try {
           this.$axios.delete(url, params).then(res => {

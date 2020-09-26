@@ -9,21 +9,21 @@
 </template>
 
 <script>
-import showModule from '@/components/busniss/ShowModule';
+import showModule from "@/components/busniss/ShowModule";
 export default {
   components: {
-    'fs-content': showModule
+    "fs-content": showModule
   },
   data() {
     return {
       active: 0,
       items: [
-        { text: '数码' },
-        { text: '手机' },
-        { text: '家电' },
-        { text: '家具' },
-        { text: '服装' },
-        { text: '鞋子' }
+        { text: "数码" },
+        { text: "手机" },
+        { text: "家电" },
+        { text: "家具" },
+        { text: "服装" },
+        { text: "鞋子" }
       ]
     };
   }

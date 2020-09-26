@@ -76,11 +76,11 @@
 </template>
 
 <script>
-import { axiosDatas } from '@/mixins/axios';
+import { axiosDatas } from "@/mixins/axios";
 export default {
   mixins: [axiosDatas],
   created() {
-    const data = this.getData('/users/list/', {
+    const data = this.getData("/users/list/", {
       pageSize: 3
     });
     console.log(data);
@@ -94,7 +94,7 @@ export default {
   min-height: 100vh;
   background: #f7f7f7;
 }
-.top-module{
+.top-module {
   display: flex;
   align-items: center;
   padding-left: 20px;
@@ -102,7 +102,7 @@ export default {
   position: relative;
   background: rgb(182, 182, 253);
 }
-.head-module{
+.head-module {
   overflow: hidden;
   padding-right: 15px;
   img {

@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import MainTabBar from '@/components/base/mainTabbar/MainTabBar';
-import { mapState } from 'vuex';
+import MainTabBar from "@/components/base/mainTabbar/MainTabBar";
+import { mapState } from "vuex";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     MainTabBar
   },

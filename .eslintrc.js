@@ -9,10 +9,20 @@ module.exports = {　//此项是用来告诉eslint找当前配置文件不能往
     node: true,
     es6: true,
   },// 此项是用来配置标准的js风格，就是说写代码的时候要规范的写，如果你使用vs-code我觉得应该可以避免出错
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  // extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  
+  extends: [
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:vue/essential",
+    "eslint:recommended"
+  ],
+  plugins: ["prettier"],
+
  
   // add your custom rules here
 rules: {　　//设置 每行最多能出现几个属性  以下配置是每行超过10个属性 就会报错
+  'prettier/prettier': 'error',
   "vue/max-attributes-per-line": [2, {
     "singleline": 10,
     "multiline": {
@@ -161,7 +171,7 @@ rules: {　　//设置 每行最多能出现几个属性  以下配置是每行�
     }
   }],
   'padded-blocks': [2, 'never'],
-  'quotes': [2, 'single', {
+  'quotes': [2, 'double', {
     'avoidEscape': true,
     'allowTemplateLiterals': true
   }],　　//js语句末尾是否需要分号
