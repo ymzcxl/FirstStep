@@ -1,11 +1,11 @@
 module.exports = {
-  printWidth: 80,
-  semi: true, // 在每个语句的末尾添加分号
-  singleQuote: true, // 使用单引号而不是双引号
-  trailingComma: "none", // 多行时尽可能打印尾随逗号<none|es5|all>
-  bracketSpacing: true, // 对象文字中打印括号之间的空格
-  jsxBracketSameLine: true, // 将>多行JSX元素放在最后一行的末尾，而不是单独放在下一行
-  arrowParens: "avoid", // 在单个箭头函数参数周围加上括号<avoid|always>
-  requirePragma: false,
-  proseWrap: "preserve"
+  printWidth: 80, // 每行代码长度（默认80）
+  tabWidth: 2, // 每个tab相当于多少个空格（默认2）
+  useTabs: false, // 是否使用tab进行缩进（默认false）
+  singleQuote: false, // 使用单引号（默认false）
+  semi: true, // 声明结尾使用分号(默认true)
+  trailingComma: "all", // 多行使用拖尾逗号（默认none）
+  bracketSpacing: true, // 对象字面量的大括号间使用空格（默认true）
+  jsxBracketSameLine: false, // 多行JSX中的>放置在最后一行的结尾，而不是另起一行（默认false）
+  arrowParens: "avoid", // 只有一个参数的箭头函数的参数是否带圆括号（默认avoid）
 };

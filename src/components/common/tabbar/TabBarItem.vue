@@ -1,13 +1,13 @@
 <template>
   <div class="tab-bar-item" @click="itemClick">
-    <div v-if="!isActive" >
-      <slot name="item-icon"/>
+    <div v-if="!isActive">
+      <slot name="item-icon" />
     </div>
     <div v-else>
-      <slot name="item-icon-select"/>
+      <slot name="item-icon-select" />
     </div>
-    <div :style="activeStyle" >
-      <slot name="item-text"/>
+    <div :style="activeStyle">
+      <slot name="item-text" />
     </div>
   </div>
 </template>
@@ -17,16 +17,15 @@ export default {
   props: {
     path: {
       type: String,
-      default: ""
+      default: "",
     },
     activeColor: {
       type: String,
-      default: "red"
-    }
+      default: "red",
+    },
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     isActive() {
@@ -34,15 +33,15 @@ export default {
     },
     activeStyle() {
       return this.isActive ? { color: this.activeColor } : {};
-    }
+    },
   },
   methods: {
     itemClick() {
       console.log("itemClick");
       console.log(this.path);
       this.$router.push(this.path);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -57,5 +56,4 @@ export default {
   margin-top: 3px;
   height: 24px;
 }
-
 </style>

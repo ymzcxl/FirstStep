@@ -20,5 +20,5 @@ export default {
   // },
   allowTabShow({ commit }, params) {
     commit(types.ARROWTABSHOW, params);
-  }
+  },
 };

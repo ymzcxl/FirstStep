@@ -23,13 +23,11 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped lang="scss">
-::v-deep .van-card__content{
+::v-deep .van-card__content {
   text-align: left;
 }
 </style>

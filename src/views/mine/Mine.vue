@@ -3,18 +3,21 @@
     <!-- 头部 -->
     <div class="top-module">
       <div class="head-module">
-        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1738657804,3125367699&fm=26&gp=0.jpg" alt="">
+        <img
+          src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1738657804,3125367699&fm=26&gp=0.jpg"
+          alt=""
+        />
       </div>
       <div class="btn-module">
         <span class="login-text">登录/注册</span>
         <div class="log-text">
-          <img class="log-icon" src="@/assets/img/mine/mine_log.png" alt="">
+          <img class="log-icon" src="@/assets/img/mine/mine_log.png" alt="" />
           <span>签到领积分</span>
         </div>
       </div>
       <div class="btns-module">
-        <img class="icon" src="@/assets/img/mine/mine_set_up.png" alt="">
-        <img class="icon" src="@/assets/img/mine/mine_common.png" alt="">
+        <img class="icon" src="@/assets/img/mine/mine_set_up.png" alt="" />
+        <img class="icon" src="@/assets/img/mine/mine_common.png" alt="" />
       </div>
     </div>
     <!-- 中部 -->
@@ -35,7 +38,6 @@
         <span>11</span>
         <span class="text">鸟币</span>
       </div>
-
     </div>
     <!-- 内容 -->
     <div class="order-module">
@@ -43,33 +45,40 @@
         <div class="order-text">我的订单</div>
         <div>
           <span>全部订单</span>
-          <img class="arrow-icon" src="@/assets/img/mine/mine_arrow.png" alt="">
+          <img
+            class="arrow-icon"
+            src="@/assets/img/mine/mine_arrow.png"
+            alt=""
+          />
         </div>
       </div>
       <div class="btn-func-module">
         <div class="items">
-          <img class="to-icon" src="@/assets/img/mine/to_pay.png" alt="">
+          <img class="to-icon" src="@/assets/img/mine/to_pay.png" alt="" />
           <span class="func-text">待付款</span>
         </div>
         <div class="items">
-          <img class="to-icon" src="@/assets/img/mine/to_get.png" alt="">
+          <img class="to-icon" src="@/assets/img/mine/to_get.png" alt="" />
           <span class="func-text">待收货</span>
         </div>
         <div class="items">
-          <img class="to-icon" src="@/assets/img/mine/to_use.png" alt="">
+          <img class="to-icon" src="@/assets/img/mine/to_use.png" alt="" />
           <span class="func-text">待使用</span>
         </div>
         <div class="items">
-          <img class="to-icon" src="@/assets/img/mine/to_common.png" alt="">
+          <img class="to-icon" src="@/assets/img/mine/to_common.png" alt="" />
           <span class="func-text">待评价</span>
         </div>
         <div class="items">
-          <img class="to-icon" src="@/assets/img/mine/to_comsumer.png" alt="">
+          <img class="to-icon" src="@/assets/img/mine/to_comsumer.png" alt="" />
           <span class="func-text">售后</span>
         </div>
       </div>
       <div class="img-module">
-        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3360077528,648283578&fm=26&gp=0.jpg" alt="">
+        <img
+          src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3360077528,648283578&fm=26&gp=0.jpg"
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -81,15 +90,15 @@ export default {
   mixins: [axiosDatas],
   created() {
     const data = this.getData("/users/list/", {
-      pageSize: 3
+      pageSize: 3,
     });
     console.log(data);
-  }
+  },
 };
 </script>
 
 <style scoped lang="scss">
-.my-home-containter{
+.my-home-containter {
   position: relative;
   min-height: 100vh;
   background: #f7f7f7;
@@ -111,12 +120,12 @@ export default {
     border-radius: 50%;
   }
 }
-.btn-module{
+.btn-module {
   display: flex;
   font-size: 14px;
   color: #fff;
   flex-direction: column;
-  .log-text{
+  .log-text {
     margin-top: 5px;
     font-size: 8px;
     border-radius: 8px;
@@ -125,19 +134,19 @@ export default {
     opacity: 0.44;
     background: #8b8a8a;
   }
-  .log-icon{
+  .log-icon {
     padding: 0 4px;
     padding-top: 2px;
     width: 8px;
     height: 8px;
   }
 }
-.btns-module{
+.btns-module {
   position: absolute;
   right: 15px;
   top: 33px;
 }
-.icon{
+.icon {
   width: 24px;
   height: 24px;
   margin-left: 14px;
@@ -160,8 +169,8 @@ export default {
     justify-content: center;
     flex-direction: column;
     font-size: 12px;
-    .text{
-      margin-top: 9px;;
+    .text {
+      margin-top: 9px;
     }
   }
 }

@@ -2,11 +2,16 @@
   <div class="home-container">
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(image, index) in images" :key="index">
-        <img :src="image" alt="">
+        <img :src="image" alt="" />
       </van-swipe-item>
     </van-swipe>
     <van-grid :column-num="4">
-      <van-grid-item v-for="value in 8" :key="value" :text="'高级货'+ value" icon="fire" />
+      <van-grid-item
+        v-for="value in 8"
+        :key="value"
+        :text="'高级货' + value"
+        icon="fire"
+      />
     </van-grid>
   </div>
 </template>
@@ -22,7 +27,7 @@ export default {
       images: [
         "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1894245189,624137215&fm=26&gp=0.jpg",
         "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3956679320,2050443053&fm=26&gp=0.jpg",
-        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2650529120,1058972923&fm=26&gp=0.jpg"
+        "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2650529120,1058972923&fm=26&gp=0.jpg",
       ],
       date: "",
       show: false,
@@ -33,23 +38,23 @@ export default {
           name: "张三",
           tel: "13000000000",
           address: "浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室",
-          isDefault: true
+          isDefault: true,
         },
         {
           id: "2",
           name: "李四",
           tel: "1310000000",
-          address: "浙江省杭州市拱墅区莫干山路 50 号"
-        }
+          address: "浙江省杭州市拱墅区莫干山路 50 号",
+        },
       ],
       disabledList: [
         {
           id: "3",
           name: "王五",
           tel: "1320000000",
-          address: "浙江省杭州市滨江区江南大道 15 号"
-        }
-      ]
+          address: "浙江省杭州市滨江区江南大道 15 号",
+        },
+      ],
     };
   },
   created() {
@@ -57,8 +62,7 @@ export default {
     // this
   },
   methods: {
-    getData() {
-    },
+    getData() {},
     onAdd() {
       Toast("新增地址");
     },
@@ -71,8 +75,8 @@ export default {
     onConfirm(date) {
       this.show = false;
       this.date = this.formatDate(date);
-    }
-  }
+    },
+  },
   // created () {
   //   this.getData()
   // }
@@ -80,10 +84,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.van-swipe{
+.van-swipe {
   height: 175px;
 }
-::v-deep .van-swipe-item{
+::v-deep .van-swipe-item {
   img {
     height: 100%;
     object-fit: cover;

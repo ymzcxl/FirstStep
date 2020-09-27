@@ -1,4 +1,3 @@
-
 let BackUrl = null;
 const BasiUrl = process.env.VUE_APP_BASIC_API;
 

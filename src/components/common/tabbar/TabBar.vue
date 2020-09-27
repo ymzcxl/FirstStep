@@ -1,17 +1,15 @@
 <template>
   <div id="tab-bar">
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style>
-#tab-bar{
+#tab-bar {
   display: flex;
   text-align: center;
   height: 49px;
@@ -21,7 +19,6 @@ export default {
   right: 0;
   bottom: -1px;
   background: #f6f6f6;
-  box-shadow: 0 -1px 1px rgba(100, 100, 100, .1)
+  box-shadow: 0 -1px 1px rgba(100, 100, 100, 0.1);
 }
-
 </style>
