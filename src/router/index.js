@@ -17,57 +17,57 @@ const routes = [
   // 一级菜单
   {
     path: "",
-    redirect: "/mine"
+    redirect: "/mine",
   },
   {
     path: "/mine",
     component: Mine,
-    meta: { title: "个人中心" }
+    meta: { title: "个人中心" },
   },
   {
     path: "/cart",
     component: Cart,
-    meta: { title: "购物车" }
+    meta: { title: "购物车" },
   },
   {
     path: "/classify",
     component: Classify,
-    meta: { title: "分类" }
+    meta: { title: "分类" },
   },
   {
     path: "/home",
     component: Home,
-    meta: { title: "首页" }
+    meta: { title: "首页" },
   },
   // 二级菜单
   {
     path: "/login",
     component: Login,
-    meta: { title: "登录/注册" }
-  }
+    meta: { title: "登录/注册" },
+  },
 ];
 
 const router = new Router({
   mode: "history",
   base: "",
-  routes
+  routes,
 });
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // 定义一个数组：包含下面路径的就去掉底部菜单栏
   const arr = [
     {
-      path: "/home"
+      path: "/home",
     },
     {
-      path: "/classify"
+      path: "/classify",
     },
     {
-      path: "/cart"
+      path: "/cart",
     },
     {
-      path: "/mine"
-    }
+      path: "/mine",
+    },
   ];
   const isFlag = arr.find(item => {
     return to.path === item.path;

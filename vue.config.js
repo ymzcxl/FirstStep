@@ -1,28 +1,28 @@
 const autoprefixer = require("autoprefixer");
 const pxtorem = require("postcss-pxtorem");
 module.exports = {
-  configureWebpack:{
-    resolve:{
-      alias:{
-          // '@':'src',//默认的
-          'assets':'@/assets',
-          'common':'@/common',
-          'components':'@/components',
-          'network':'@/network',
-          'vue$': 'vue/dist/vue.esm.js',
-          // 'rounter':'@/rounter'只在main.js引用，直接用，this.$rounter
-          'views':'@/views',
-          // 'store':'@/store',和rounter一样
+  configureWebpack: {
+    resolve: {
+      alias: {
+        // '@':'src',//默认的
+        'assets': '@/assets',
+        'common': '@/common',
+        'components': '@/components',
+        'network': '@/network',
+        'vue$': 'vue/dist/vue.esm.js',
+        // 'rounter':'@/rounter'只在main.js引用，直接用，this.$rounter
+        'views': '@/views',
+        // 'store':'@/store',和rounter一样
       }
     },
     performance: {
-      hints:'warning',
+      hints: 'warning',
       //入口起点的最大体积
       maxEntrypointSize: 50000000,
       //生成文件的最大体积
       maxAssetSize: 30000000,
       //只给出 js 文件的性能提示
-      assetFilter: function(assetFilename) {
+      assetFilter: function (assetFilename) {
         return assetFilename.endsWith('.js');
       }
     }
@@ -45,20 +45,6 @@ module.exports = {
       }
     }
   },
-   //警告 webpack 的性能提示
-  //  configureWebpack : {
-  //   performance: {
-  //       hints:'warning',
-  //       //入口起点的最大体积 整数类型（以字节为单位）
-  //       maxEntrypointSize: 50000000,
-  //       //生成文件的最大体积 整数类型（以字节为单位 300k）
-  //       maxAssetSize: 30000000,
-  //       //只给出 js 文件的性能提示
-  //       assetFilter: function(assetFilename) {
-  //           return assetFilename.endsWith('.js');
-  //       }
-  //   }
-  // },
 
   devServer: {
     disableHostCheck: true,

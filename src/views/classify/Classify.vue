@@ -1,8 +1,12 @@
 <template>
   <div class="classify-module">
-    <van-tree-select :items="items" :main-active-index.sync="active" height="55vw">
+    <van-tree-select
+      :items="items"
+      :main-active-index.sync="active"
+      height="55vw"
+    >
       <template #content>
-        <fs-content v-if="active==0"/>
+        <fs-content v-if="active == 0" />
       </template>
     </van-tree-select>
   </div>
@@ -12,7 +16,7 @@
 import showModule from "@/components/busniss/ShowModule";
 export default {
   components: {
-    "fs-content": showModule
+    "fs-content": showModule,
   },
   data() {
     return {
@@ -23,20 +27,20 @@ export default {
         { text: "家电" },
         { text: "家具" },
         { text: "服装" },
-        { text: "鞋子" }
-      ]
+        { text: "鞋子" },
+      ],
     };
-  }
+  },
 };
 </script>
 
 <style scoped lang="scss">
-.classify-module{
+.classify-module {
   height: 90vh;
 }
-::v-deep .van-tree-select{
-  height: 100%!important;
-  .van-tree-select__nav{
+::v-deep .van-tree-select {
+  height: 100% !important;
+  .van-tree-select__nav {
     flex-grow: 0.7;
     width: 150px;
   }

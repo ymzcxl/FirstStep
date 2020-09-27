@@ -1,37 +1,38 @@
 <template>
   <div class="show-module">
     <div class="main-module">
-      <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1738657804,3125367699&fm=26&gp=0.jpg" alt="">
+      <img
+        src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1738657804,3125367699&fm=26&gp=0.jpg"
+        alt=""
+      />
     </div>
     <div class="item-module">
-      <div v-for="item in 20" :key="item" class="items"/>
+      <div v-for="item in 20" :key="item" class="items" />
     </div>
   </div>
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped lang="scss">
-.main-module{
+.main-module {
   height: 180px;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
 }
-.item-module{
+.item-module {
   padding: 0 10px 10px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  .items{
+  .items {
     width: calc((100% - 20px) / 3);
     height: 79px;
     background: #008c8c;
