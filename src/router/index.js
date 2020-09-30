@@ -5,10 +5,10 @@ import store from "@/store";
 Vue.use(Router);
 
 // 一级菜单
-const Home = () => import("@/views/home/Home");
-const Classify = () => import("@/views/classify/Classify");
-const Cart = () => import("@/views/cart/Cart");
-const Mine = () => import("@/views/mine/Mine");
+// const Home = () => import("@/views/home/Home");
+// const Classify = () => import("@/views/classify/Classify");
+// const Cart = () => import("@/views/cart/Cart");
+// const Mine = () => import("@/views/mine/Mine");
 
 // 二级页面
 const Login = () => import("@/views/login/Login");
@@ -21,7 +21,8 @@ const routes = [
   },
   {
     path: "/mine",
-    component: Mine,
+    component: () =>
+      import(/* webpackChunkName: "artisticTalent" */ "@/views/mine/Mine.vue"),
     meta: { title: "个人中心" },
   },
   {
