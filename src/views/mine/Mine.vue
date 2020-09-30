@@ -92,7 +92,7 @@ export default {
     const data = this.getData("/users/list/", {
       pageSize: 3,
     });
-    console.log(data);
+    // console.log(data);
   },
 };
 </script>
