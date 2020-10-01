@@ -5,32 +5,32 @@ module.exports = {
     resolve: {
       alias: {
         // '@':'src',//默认的
-        'assets': '@/assets',
-        'common': '@/common',
-        'components': '@/components',
-        'network': '@/network',
-        'vue$': 'vue/dist/vue.esm.js',
+        assets: "@/assets",
+        common: "@/common",
+        components: "@/components",
+        network: "@/network",
+        vue$: "vue/dist/vue.esm.js",
         // 'rounter':'@/rounter'只在main.js引用，直接用，this.$rounter
-        'views': '@/views',
+        views: "@/views",
         // 'store':'@/store',和rounter一样
-      }
+      },
     },
     performance: {
-      hints: 'warning',
+      hints: "warning",
       //入口起点的最大体积
       maxEntrypointSize: 50000000,
       //生成文件的最大体积
       maxAssetSize: 30000000,
       //只给出 js 文件的性能提示
       assetFilter: function (assetFilename) {
-        return assetFilename.endsWith('.js');
-      }
-    }
+        return assetFilename.endsWith(".js");
+      },
+    },
   },
   css: {
     loaderOptions: {
       sass: {
-        prependData: '@import "~@/assets/common.scss";'
+        prependData: '@import "~@/assets/common.scss";',
       },
       postcss: {
         plugins: [
@@ -39,11 +39,11 @@ module.exports = {
             rootValue: 40, // 换算的基数(设计图750的根字体为32)
             selectorBlackList: [".van", ".not-rem"], // 要忽略的选择器并保留为px。
             propList: ["*"],
-            minPixelValue: 2 // 设置要替换的最小像素值。
-          })
-        ]
-      }
-    }
+            minPixelValue: 2, // 设置要替换的最小像素值。
+          }),
+        ],
+      },
+    },
   },
 
   devServer: {
@@ -53,13 +53,14 @@ module.exports = {
     open: true,
     proxy: {
       "/api": {
-        target: process.env.VUE_APP_URL,// 重环境变量中拿代理的路径
+        // target: process.env.VUE_APP_URL, // 重环境变量中拿代理的路径
+        target: "http://47.106.152.252:8001",
         ws: false,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
-  }
-}
+          "^/api": "",
+        },
+      },
+    },
+  },
+};

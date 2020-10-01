@@ -1,51 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
+import { routes } from "./router";
 import store from "@/store";
 
 Vue.use(Router);
-
-// 一级菜单
-const Home = () => import("@/views/home/Home");
-const Classify = () => import("@/views/classify/Classify");
-const Cart = () => import("@/views/cart/Cart");
-const Mine = () => import("@/views/mine/Mine");
-
-// 二级页面
-const Login = () => import("@/views/login/Login");
-
-const routes = [
-  // 一级菜单
-  {
-    path: "",
-    redirect: "/mine",
-  },
-  {
-    path: "/mine",
-    component: Mine,
-    meta: { title: "个人中心" },
-  },
-  {
-    path: "/cart",
-    component: Cart,
-    meta: { title: "购物车" },
-  },
-  {
-    path: "/classify",
-    component: Classify,
-    meta: { title: "分类" },
-  },
-  {
-    path: "/home",
-    component: Home,
-    meta: { title: "首页" },
-  },
-  // 二级菜单
-  {
-    path: "/login",
-    component: Login,
-    meta: { title: "登录/注册" },
-  },
-];
 
 const router = new Router({
   mode: "history",
@@ -54,7 +12,7 @@ const router = new Router({
 });
 
 router.beforeEach(async (to, from, next) => {
-  // 定义一个数组：包含下面路径的就去掉底部菜单栏
+  // 定义一个数组：包含下面路径的就去掉底部菜单栏[白名单]
   const arr = [
     {
       path: "/home",
