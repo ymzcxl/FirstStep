@@ -53,13 +53,13 @@ module.exports = {
     open: true,
     proxy: {
       "/api": {
-        target: process.env.VUE_APP_URL, // 重环境变量中拿代理的路径
+        // target: process.env.VUE_APP_URL, // 重环境变量中拿代理的路径
+        target: "http://47.106.152.252:8001",
         ws: false,
         changeOrigin: true,
         pathRewrite: {
           "^/api": "",
         },
-        hot: true, // 热加载
       },
     },
   },
