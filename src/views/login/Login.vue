@@ -24,7 +24,7 @@
         <van-field v-model="couter" placeholder="手机号/邮箱地址/鸽子号" />
         <van-field v-model="password" type="password" placeholder="密码" />
         <van-field v-model="phone" placeholder="电话" />
-        <van-field v-model="remark" placeholder="备注" />
+        <!-- <van-field v-model="remark" placeholder="备注" /> -->
       </van-cell-group>
     </div>
     <div class="tip-test">
@@ -45,7 +45,7 @@ export default {
       couter: "",
       password: "",
       phone: "",
-      remark: "",
+      // remark: "",
     };
   },
   methods: {
@@ -57,14 +57,21 @@ export default {
         password: this.password,
         username: this.couter,
         tel: this.phone,
-        remark: this.remark,
+        // remark: this.remark,
       };
-      const res = await this.postData("users/", obj);
+      const res = await this.postData("/users/login/tel", obj);
       if (res.code === 10000) {
-        // alert('注册成功')
-        this.$toast("注册成功");
+        this.$store.dispatch("setToKen", res.data.token || "");
+        if (this.$route.query.redirect) {
+          // 回到即将跳转到的页面
+          this.$router.push({ path: this.$route.query.redirect });
+        } else {
+          // 如不存在，直接跳转到首页
+          this.$router.push({ path: "/home" });
+        }
+        this.$toast("登录成功");
       } else {
-        this.$toast("注册失败");
+        this.$toast("登录失败");
       }
     },
   },

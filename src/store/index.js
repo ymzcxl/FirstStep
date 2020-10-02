@@ -9,6 +9,7 @@ Vue.use(Vuex);
 const state = {
   cartList: [],
   allowTabShow: true, // 是否显示底部菜单栏
+  userToken: "",
 };
 const store = new Vuex.Store({
   state,

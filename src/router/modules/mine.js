@@ -7,7 +7,8 @@ export default [
     path: "/mine",
     name: "Mine",
     meta: {
-      title: "个人中心",
+      title: "个人中心", //页面标题名
+      requireAuth: true, //需要登录验证
     },
     component: Mine,
   },
