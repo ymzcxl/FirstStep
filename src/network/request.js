@@ -1,5 +1,6 @@
+import Vue from "vue";
 import axios from "axios";
-
+import { SETTOKEN } from "@/store/mutation-types";
 // 1.配置这个模块特有的基础配置
 const instant = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL,
@@ -18,6 +19,8 @@ instant.interceptors.request.use(
     // 2. 比如每次发送网络请求时，都希望在界面显示一个请求的图标
     // 3. 某些网络请求（比如登陆(token)），必须携带一些特殊的信息
     // config.headers['CLIENT-TOKEN'] = token; // 请求头设置token
+    let token = Vue.ls.get(SETTOKEN) || ""; //解密
+    config.headers["CLIENT-TOKEN"] = token;
     return config; // 拦截别人的配置，不返还谁拿得到
   },
   err => {

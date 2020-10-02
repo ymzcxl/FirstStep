@@ -5,14 +5,9 @@ import App from "./App";
 import router from "./router";
 import store from "./store";
 import "@/assets/scss/main.scss";
-import axios from "@/network/request";
-import Vant, { Toast } from "vant";
+import "@/config/fsConfig"; // 引入其他配置文件
 import "vant/lib/index.css";
 import "lib-flexible/flexible.js";
-Vue.use(Toast);
-Vue.use(Vant);
-Vue.prototype.$axios = axios;
-Vue.prototype.$toast = Toast;
 
 /* eslint-disable no-new */
 new Vue({

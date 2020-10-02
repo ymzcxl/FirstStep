@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open --mode dev",
+    "dev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "build:dev": "vue-cli-service build --mode dev",
     "build:test": "vue-cli-service build --mode test",
@@ -21,8 +22,10 @@
     "sass-resources-loader": "^2.1.0",
     "vant": "^2.10.6",
     "vue": "^2.5.2",
+    "vue-ls": "^3.2.1",
     "vue-router": "^3.0.1",
-    "vuex": "^3.5.1"
+    "vuex": "^3.5.1",
+    "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
     "@vue/cli-service": "^4.2.0",
@@ -78,7 +81,6 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
