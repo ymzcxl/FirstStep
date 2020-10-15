@@ -12,7 +12,7 @@
         <span class="login-text">登录/注册</span>
         <div class="log-text">
           <img class="log-icon" src="@/assets/img/mine/mine_log.png" alt="" />
-          <span>签到领积分</span>
+          <span class="font-color">签到领积分</span>
         </div>
       </div>
       <div class="btns-module">
@@ -99,6 +99,7 @@ export default {
 <style scoped lang="scss">
 .my-home-containter {
   position: relative;
+  text-align: center;
   min-height: 100vh;
   background: #f7f7f7;
 }

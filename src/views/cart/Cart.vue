@@ -1,33 +1,35 @@
 <template>
   <div class="cart-container">
-    <van-card
-      v-for="item in 8"
-      :key="item"
-      num="2"
-      price="2.00"
-      desc="描述信息"
-      tag="高级货"
-      title="阿玛尼直售"
-      thumb="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4053899535,255821126&fm=26&gp=0.jpg"
-    >
-      <template #tags>
-        <van-tag plain type="danger">口红</van-tag>
-        <van-tag plain type="danger">奥迪</van-tag>
-      </template>
-      <template #footer>
-        <!-- <van-button size="mini">按钮</van-button>
-        <van-button size="mini">按钮</van-button> -->
-      </template>
-    </van-card>
+    <!-- 左边(组件的)是属性名，右边（页面的）是变量名 -->
+    <div class="ceshi" v-for="item in 4" :key="item">
+      <fs-goods-card @handleClick="handleClick" :title="title" />
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import GoodsCard from "@/components/busniss/GoodsCard";
+export default {
+  components: {
+    "fs-goods-card": GoodsCard,
+  },
+  data() {
+    return {
+      title: "2020秋冬季新款韩版加绒卫衣女装原宿风休闲宽松印花长袖上衣",
+    };
+  },
+  methods: {
+    handleClick(val) {
+      console.log(val);
+      // this.$router.push("/home");
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
-::v-deep .van-card__content {
-  text-align: left;
+.ceshi {
+  display: flex;
+  flex-wrap: nowrap;
 }
 </style>
