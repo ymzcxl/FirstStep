@@ -1,7 +1,7 @@
 <template>
   <div class="cart-container">
     <!-- 左边(组件的)是属性名，右边（页面的）是变量名 -->
-    <div class="ceshi" v-for="item in 4" :key="item">
+    <div class="goods-cards" v-for="item in 8" :key="item">
       <fs-goods-card @handleClick="handleClick" :title="title" />
     </div>
   </div>
@@ -28,8 +28,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.ceshi {
+.cart-container {
+  padding: 10px;
+  padding-bottom: 65px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+}
+::v-deep .goods-cards {
+  width: 48.5%;
+  border-radius: 8px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 7px #ccc;
+  margin-bottom: 20px;
+}
+::v-deep .goods-cards:nth-child(2n) {
+  margin-right: 0;
 }
 </style>
