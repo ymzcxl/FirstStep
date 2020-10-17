@@ -57,34 +57,43 @@ export default {
 
 <style scoped lang="scss">
 .goods-module {
-  margin: 20px auto;
-  width: 317px;
-  height: 430px;
-  padding: 20px 20px 0 20px;
+  // width: 317px;
+  // height: 430px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 .top-module {
   background: #ccc;
-  height: 275px;
+  // height: 275px;
+  border-radius: 8px 8px 0 0;
+  font-size: 0;
+  overflow: hidden;
   .img-module {
+    border-radius: 8px 8px 0 0;
     width: 100%;
-    height: 275px;
+    height: 140px;
   }
 }
 .bottom-module {
   font-size: 16px;
+  padding: 0 10px 10px 10px;
+
   // display: flex;
   // flex-direction: column; //竖向排列
 }
 .price-module {
-  margin-top: 20px;
+  margin-top: 5px;
   color: #f40;
 }
 .title-module {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 12px;
   color: #666;
+  display: -webkit-box !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .business-module {
   display: flex;
@@ -95,7 +104,7 @@ export default {
 .other-modle {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 14px;
   justify-content: space-between;
   .business-img {
