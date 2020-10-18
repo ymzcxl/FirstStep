@@ -1,20 +1,28 @@
 <template>
   <div class="cart-container">
     <!-- 左边(组件的)是属性名，右边（页面的）是变量名 -->
-    <div class="goods-cards" v-for="item in 8" :key="item">
-      <fs-goods-card @handleClick="handleClick" :title="title" />
-    </div>
+    <!-- <div class="goods-cards" v-for="item in 8" :key="item"> -->
+    <fs-list :url="url" :apiParams="params">
+      <template v-slot="{ data }">
+        <fs-goods-card @handleClick="handleClick" :title="title" :data="data" />
+      </template>
+    </fs-list>
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
 import GoodsCard from "@/components/busniss/GoodsCard";
+import List from "@/components/common/list/List";
 export default {
   components: {
     "fs-goods-card": GoodsCard,
+    "fs-list": List,
   },
   data() {
     return {
+      url: "/users/list/", // 链接
+      params: {},
       title: "2020秋冬季新款韩版加绒卫衣女装原宿风休闲宽松印花长袖上衣",
     };
   },
