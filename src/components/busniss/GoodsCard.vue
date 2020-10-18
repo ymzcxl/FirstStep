@@ -2,11 +2,7 @@
   <!-- div：块盒 span,img是行盒子 -->
   <div class="goods-module" @click="handleClick">
     <div class="top-module">
-      <img
-        class="img-module"
-        src="https://gd3.alicdn.com/imgextra/i2/2209413955572/O1CN01wFV3Rf1r21VauXAgU_!!2209413955572.jpg_400x400.jpg"
-        alt=""
-      />
+      <img class="img-module" :src="coverImg" alt="" />
     </div>
     <div class="bottom-module">
       <div class="price-module">
@@ -36,6 +32,10 @@ export default {
     title: {
       type: String,
       default: "暂无介绍",
+    },
+    coverImg: {
+      type: String,
+      default: "",
     },
   },
   data() {
