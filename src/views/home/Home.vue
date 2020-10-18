@@ -13,12 +13,37 @@
         icon="fire"
       />
     </van-grid>
+    <van-tabs type="card">
+      <van-tab title="热门">
+        <div class="goods-cards" v-for="item in 8" :key="item">
+          <fs-goods-card
+            coverImg="https://gd3.alicdn.com/imgextra/i2/2209413955572/O1CN01wFV3Rf1r21VauXAgU_!!2209413955572.jpg_400x400.jpg"
+          ></fs-goods-card>
+        </div>
+      </van-tab>
+      <van-tab title="流行">
+        <div class="goods-cards" v-for="item in 8" :key="item">
+          <fs-goods-card :coverImg="images[2]"></fs-goods-card>
+        </div>
+      </van-tab>
+      <van-tab title="推荐">
+        <div class="goods-cards" v-for="item in 8" :key="item">
+          <fs-goods-card :coverImg="images[1]"></fs-goods-card>
+        </div>
+      </van-tab>
+    </van-tabs>
   </div>
 </template>
 
 <script>
 import { Toast } from "vant";
+
+import GoodsCard from "@/components/busniss/GoodsCard";
+
 export default {
+  components: {
+    "fs-goods-card": GoodsCard,
+  },
   // 第一步：新建文件。第二步：配路由。第三步：写样式
   data() {
     return {
@@ -97,5 +122,23 @@ export default {
 ::v-deep .van-grid {
   margin-top: 10px;
   border-bottom: 1px solid #f7f7f7;
+}
+::v-deep .van-tabs__content {
+  padding: 20px;
+}
+::v-deep .van-tab__pane {
+  padding-bottom: 65px;
+  display: flex;
+  flex-wrap: wrap;
+}
+::v-deep .goods-cards {
+  width: 48.5%;
+  border-radius: 8px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 7px #ccc;
+  margin-bottom: 20px;
+}
+::v-deep .goods-cards:nth-child(2n) {
+  margin-right: 0;
 }
 </style>
